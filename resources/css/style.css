@@ -4,6 +4,10 @@
 
 }
 
+#movie {
+  background-image: url("https://image.tmdb.org/t/p/w640/6xjBbCZp3bXFps5ET1Y4zfq6bws.jpg");
+  background-size: 100%;
+}
 
 /*
   #movies .col-md-3 img {

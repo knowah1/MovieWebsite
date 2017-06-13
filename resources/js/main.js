@@ -46,10 +46,22 @@ function movieSelected(id) {
 function getMovie() {
   let movieId = sessionStorage.getItem('movieId');
 
+
+
+
+
+
+
+
   axios.get('https://api.themoviedb.org/3/movie/'+movieId+'?api_key=84b339efcbf1ebe8577db90bca7cd395&language=en-US')
     .then((response) => {
       console.log(response);
       let movie = response.data;
+
+      var back = document.getElementById('movie');
+      back.style.background = "https://image.tmdb.org/t/p/w640" + movie.backdrop_path;
+
+      // console.log(backgroundImage);
 
       let output = `
           <div class="row">
@@ -61,7 +73,7 @@ function getMovie() {
               <ul class="list-group">
                 <li class="list-group-item"><strong>Released:</strong> ${movie.release_date}</li>
                 <li class="list-group-item"><strong>Runtime:</strong> ${movie.runtime} minutes</li>
-                <li class="list-group-item"><strong>Rating:</strong> ${movie.vote_average}/10</li> 
+                <li class="list-group-item"><strong>Rating:</strong> ${movie.vote_average}/10</li>
                 <li class="list-group-item"><strong>IMDB:</strong> <a href="http://www.imdb.com/title/${movie.imdb_id}">${movie.title}</a></li>
 
 
