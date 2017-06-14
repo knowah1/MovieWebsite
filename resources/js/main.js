@@ -84,6 +84,12 @@ function getMovie() {
             </div>
           </div>
 
+          <div class="row">
+            <div class="well">
+
+            </div>
+          </div>
+
       `;
       $('#movie').html(output);
     })
